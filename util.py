@@ -7,3 +7,6 @@ def delayPrint(str):
         sys.stdout.flush()
         time.sleep(0.075)
     print("")
+
+def pause(sec):
+    time.sleep(sec)
