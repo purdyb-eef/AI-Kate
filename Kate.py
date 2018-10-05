@@ -45,7 +45,9 @@ while True:
 
     if all(e in list(map(lambda b: b.strip(punct), u.split())) for e in ["my","name"]):
         if name != None:
-            util.delayPrint(name + ", right?")
+            util.delayPrint(name + ",")
+            util.pause(0.2)
+            util.delayPrint(" right?")
             print("")
         else:
             a = 0
