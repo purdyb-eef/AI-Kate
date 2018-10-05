@@ -10,7 +10,7 @@ while True:
     u = input(": ")
 
     if u.lower() in greeting:
-        util.delayPrint(["hello","hi"][randint(0,1)] + " there :')")
+        util.delayPrint(["hello","hi"][randint(0,1)] + " there :)")
         print("")
         if name == None:
             util.pause(1.5)
