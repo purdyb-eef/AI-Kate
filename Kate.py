@@ -1,10 +1,27 @@
-import util
 from random import randint
+import turtle
+import os
+import util
 
 punct = "?!,.;()#$%^&*"
 greeting = ["hello","hi","howdy","sup"]
 yes = ["yes","yeah","yea","sure","yup","mhm","ye","yuh"]
 name = None
+
+os.system('clear')
+
+print("AI-Kate (c)2018")
+print("Kate is a simplified virtual conversational program created in and for Python.")
+print("Currently still in development, she can as of the latest updates,")
+print("- take and return greetings")
+print("- remember a given name and recall said given name when asked")
+print("- tell jokes")
+print("- and utilize the Python turtle library to draw circles or squares when asked if she can draw")
+print("\nenjoy.")
+
+input("\npress [ENTER] to continue")
+
+os.system('clear')
 
 while True:
     u = input(": ")
@@ -71,7 +88,7 @@ while True:
                         util.pause(1)
                         util.delayPrint(" OH YEA!")
                         util.pause(0.25)
-                        util.delayPrint(" the second letter is \"" + name[1] + "\,")
+                        util.delayPrint(" the second letter is \"" + name[1] + "\",")
                         util.pause(0.15)
                         util.delayPrint(" right???")
                         print("")
@@ -139,3 +156,132 @@ while True:
                     util.delayPrint(" " + name)
                     print("")
                     a = 1
+    if "joke" in u.lower():
+        g = randint(0,4)
+        if g == 0:
+            util.delayPrint("me and my new friend were going to meet up at the gym today but...")
+            util.pause(0.75)
+            print("")
+            util.delayPrint("she didn't show up")
+            util.pause(1)
+            print("")
+            util.delayPrint("guess the two of us aren't going to work out")
+            print("")
+        if g == 1:
+            util.delayPrint("i taught a wolf to meditate")
+            util.pause(1)
+            print("")
+            util.delayPrint("now he's a werewolf lol")
+            print("")
+        if g == 2:
+            util.delayPrint("oh oh this one's my favorite")
+            util.pause(1)
+            print("")
+            util.delayPrint("a husband and wife have four sons")
+            util.pause(0.5)
+            print("")
+            util.delayPrint("the oldest three are tall and have red hair and blue eyes")
+            util.pause(0.5)
+            print("")
+            util.delayPrint("the youngest however, was short with dark hair and eyes")
+            util.pause(0.5)
+            print("")
+            util.delayPrint("when the husband was on his deathbed, he asked")
+            util.pause(0.5)
+            print("")
+            util.delayPrint("\"be totally honest with me. is the youngest really my son?\"")
+            util.pause(0.5)
+            print("")
+            util.delayPrint("the wife replied \"i swear on all things holy that he is your son\"")
+            util.pause(0.5)
+            print("")
+            util.delayPrint("and with that he passed away")
+            util.pause(0.5)
+            print("")
+            util.delayPrint("then she said \"good thing he didn't ask about the other 3\"")
+            print("")
+        if g == 3:
+            util.delayPrint("a thief just stole my all my lightbulbs last night")
+            util.pause(0.25)
+            print("")
+            util.delayPrint("i should be mad, but...")
+            util.pause(1)
+            util.delayPrint(" i'm delighted")
+            print("")
+        if g == 4:
+            util.delayPrint("i don't usually tell dad jokes,")
+            util.pause(0.1)
+            util.delayPrint(" but when i do,")
+            util.pause(1)
+            util.delayPrint(" he laughs")
+            print("")
+    if all(e in list(map(lambda b: b.strip(punct), u.split())) for e in ["can","draw"]):
+        util.delayPrint("uh")
+        util.pause(0.1)
+        util.delayPrint(".")
+        util.pause(0.1)
+        util.delayPrint(".")
+        util.pause(0.6)
+        util.delayPrint(" i can draw a circle!")
+        util.pause(0.4)
+        util.delayPrint(" or a square")
+        print("")
+        draw = input(": ")
+        if "circle" in draw:
+            util.delayPrint("circle!")
+            util.pause(0.4)
+            util.delayPrint(" sure thing")
+            print("")
+            util.delayPrint("scale of 1 to 5,")
+            util.pause(0.15)
+            util.delayPrint(" how big?")
+            print("")
+            p = 1
+            while p == 1 or p == 5:
+                if p == 5:
+                    util.delayPrint("so,")
+                    util.pause(0.2)
+                    util.delayPrint(" what'll it be?")
+                r = int(input(": "))
+                if 1 <= r <= 5:
+                    turtle.reset()
+                    turtle.circle(r * 10)
+                    p = 2
+                else:
+                    util.delayPrint("1 to 5,")
+                    util.pause(0.15)
+                    util.delayPrint(" buddy.")
+                    util.pause(0.15)
+                    util.delayPrint(" i said 1 to 5")
+                    print("")
+                    p = 5
+        elif "square" in draw:
+            util.delayPrint("square!")
+            util.pause(0.4)
+            util.delayPrint(" sure thing")
+            print("")
+            util.delayPrint("scale of 1 to 5,")
+            util.pause(0.15)
+            util.delayPrint(" how big?")
+            print("")
+            y = 1
+            while y == 1 or y == 5:
+                if y == 5:
+                    util.delayPrint("so,")
+                    util.pause(0.2)
+                    util.delayPrint(" what'll it be?")
+                d = int(input(": "))
+                if 1 <= d <= 5:
+                    turtle.reset()
+                    for i in range(4):
+                        turtle.forward(d * 10)
+                        turtle.left(90)
+                    y = 2
+                else:
+                    util.delayPrint("1 to 5,")
+                    util.pause(0.15)
+                    util.delayPrint(" buddy.")
+                    util.pause(0.15)
+                    util.delayPrint(" i said 1 to 5")
+                    print("")
+                    y = 5
