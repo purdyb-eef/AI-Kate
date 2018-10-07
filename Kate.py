@@ -8,6 +8,9 @@ greeting = ["hello","hi","howdy","sup"]
 yes = ["yes","yeah","yea","sure","yup","mhm","ye","yuh"]
 name = None
 
+#TODO: don't repeat the same jokes
+#TODO: respond to "nice to meet you too"
+
 os.system('clear')
 
 print("AI-Kate (c)2018")
@@ -157,13 +160,17 @@ while True:
                     print("")
                     a = 1
     if "joke" in u.lower():
-        g = randint(0,4)
+        g = randint(0,3)
         if g == 0:
-            util.delayPrint("me and my new friend were going to meet up at the gym today but...")
+            util.delayPrint("me and my new friend were going to meet up at the gym today but")
+            util.pause(0.1)
+            util.delayPrint(".")
+            util.pause(0.1)
+            util.delayPrint(".")
             util.pause(0.75)
             print("")
-            util.delayPrint("she didn't show up")
-            util.pause(1)
+            util.delayPrint("she didn't show up.")
+            util.pause(0.8)
             print("")
             util.delayPrint("guess the two of us aren't going to work out")
             print("")
@@ -171,36 +178,9 @@ while True:
             util.delayPrint("i taught a wolf to meditate")
             util.pause(1)
             print("")
-            util.delayPrint("now he's a werewolf lol")
+            util.delayPrint("now he's a werewolf")
             print("")
         if g == 2:
-            util.delayPrint("oh oh this one's my favorite")
-            util.pause(1)
-            print("")
-            util.delayPrint("a husband and wife have four sons")
-            util.pause(0.5)
-            print("")
-            util.delayPrint("the oldest three are tall and have red hair and blue eyes")
-            util.pause(0.5)
-            print("")
-            util.delayPrint("the youngest however, was short with dark hair and eyes")
-            util.pause(0.5)
-            print("")
-            util.delayPrint("when the husband was on his deathbed, he asked")
-            util.pause(0.5)
-            print("")
-            util.delayPrint("\"be totally honest with me. is the youngest really my son?\"")
-            util.pause(0.5)
-            print("")
-            util.delayPrint("the wife replied \"i swear on all things holy that he is your son\"")
-            util.pause(0.5)
-            print("")
-            util.delayPrint("and with that he passed away")
-            util.pause(0.5)
-            print("")
-            util.delayPrint("then she said \"good thing he didn't ask about the other 3\"")
-            print("")
-        if g == 3:
             util.delayPrint("a thief just stole my all my lightbulbs last night")
             util.pause(0.25)
             print("")
@@ -208,14 +188,14 @@ while True:
             util.pause(1)
             util.delayPrint(" i'm delighted")
             print("")
-        if g == 4:
+        if g == 3:
             util.delayPrint("i don't usually tell dad jokes,")
             util.pause(0.1)
             util.delayPrint(" but when i do,")
             util.pause(1)
             util.delayPrint(" he laughs")
             print("")
-    if all(e in list(map(lambda b: b.strip(punct), u.split())) for e in ["can","draw"]):
+    if "draw" in u:
         util.delayPrint("uh")
         util.pause(0.1)
         util.delayPrint(".")
@@ -253,6 +233,7 @@ while True:
                     util.delayPrint(" buddy.")
                     util.pause(0.15)
                     util.delayPrint(" i said 1 to 5")
+                    util.pause(0.5)
                     print("")
                     p = 5
         elif "square" in draw:
@@ -283,5 +264,16 @@ while True:
                     util.delayPrint(" buddy.")
                     util.pause(0.15)
                     util.delayPrint(" i said 1 to 5")
+                    util.pause(0.5)
                     print("")
                     y = 5
+    if "ur" and "name" in u:
+        kate = randint(0,1)
+        if kate == 0:
+            util.delayPrint("i'm kate, and it's a pleasure to meet you")
+            print("")
+        else:
+            util.delayPrint("my name is kate,")
+            util.pause(0.75)
+            util.delayPrint(" your simplified virtual conversational program")
+            print("")
